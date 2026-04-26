@@ -1,0 +1,27 @@
+def validar_numero(mensaje):
+    while True:
+        try:
+            valor = float(input(mensaje))
+            return valor
+        except ValueError:
+            print("Error: Debe ingresar un número válido.")
+def ingresar_matriz():
+    print("\n--- Configuración de Matriz ---")
+    filas = int(validar_numero("Ingrese el número de filas: "))
+    columnas = int(validar_numero("Ingrese el número de columnas: ")) 
+    matriz = []
+    for i in range(filas):
+        fila = []
+        for j in range(columnas):
+            elemento = validar_numero(f"Elemento [{i+1}][{j+1}]: ")
+            fila.append(elemento)
+        matriz.append(fila)
+    return matriz
+def mostrar_matriz(matriz):
+    if matriz is None:
+        return
+    for fila in matriz:
+        print("[", end=" ")
+        for elemento in fila:
+            print(f"{elemento:8.2f}", end=" ")
+        print("]")
