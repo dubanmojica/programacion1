@@ -1,7 +1,7 @@
 import entrada
 import operaciones_matrices
 import menu
-def ejecutar():
+def ejecut ar():
     while True:
         opcion = menu.mostrar_menu()
         if opcion == 5:
